@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LifeChoise - Decision Maker</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+
+<h1>LifeChoise</h1>
+
+<div class="container">
+
+<!-- WHEEL -->
+<div class="card">
+<h2>🎡 Decision Wheel</h2>
+
+<input id="optionInput" placeholder="Enter option">
+<button onclick="addOption()">Add</button>
+
+<ul id="optionsList"></ul>
+
+<div class="wheel-wrapper">
+<canvas id="wheelCanvas" width="300" height="300"></canvas>
+<div class="pointer"></div>
+</div>
+
+<button onclick="spinWheel()">SPIN</button>
+
+<h3 id="wheelResult"></h3>
+</div>
+
+<!-- SMART -->
+<div class="card">
+<h2>Smart Decision</h2>
+
+<textarea id="problem" placeholder="Your problem"></textarea>
+
+<select id="category">
+<option>General</option>
+<option>Money</option>
+<option>Health</option>
+<option>Social</option>
+<option>Productivity</option>
+</select>
+
+<select id="mood">
+<option>Neutral</option>
+<option>Stressed</option>
+<option>Confused</option>
+</select>
+
+<button onclick="generateDecision()">Get Decision</button>
+
+<div id="resultBox">
+<p id="decisionText"></p>
+<p id="quoteText"></p>
+</div>
+
+<button onclick="downloadPDF()">Download PDF</button>
+<button onclick="copyResult()">Copy</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
